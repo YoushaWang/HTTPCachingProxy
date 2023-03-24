@@ -1,0 +1,11 @@
+version: '3.2'
+
+services:
+  main:
+    build: ./src
+    volumes:
+      - type: bind
+        source: ./var/log/erss
+        target: /var/log/erss
+    ports:
+      - "12345:12345"

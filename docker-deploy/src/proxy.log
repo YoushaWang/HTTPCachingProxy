@@ -1,0 +1,27 @@
+1: GET http://httpbin.org/forms/post HTTP/1.1 from 127.0.0.1 @ Wed Mar 01 20:48:40 2023
+1: not in cache
+1: Requesting GET http://httpbin.org/forms/post HTTP/1.1 from httpbin.org
+1: Received HTTP/1.1 200 OK from httpbin.org
+1: cached, but requires re-validation
+1: Responding HTTP/1.1 200 OK
+2: GET http://httpbin.org/forms/post HTTP/1.1 from 127.0.0.1 @ Wed Mar 01 20:48:43 2023
+2: in cache, valid
+3: CONNECT run.mocky.io:443 HTTP/1.1 from 107.15.129.222 @ Wed Mar 01 20:52:33 2023
+3: Responding "HTTP/1.1 200 OK"
+4: POST http://r3.o.lencr.org/ HTTP/1.1 from 107.15.129.222 @ Wed Mar 01 20:52:33 2023
+4: Received "HTTP/1.1 200 OK" from r3.o.lencr.org
+3: Tunnel closed
+5: GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 107.15.129.222 @ Wed Mar 01 20:53:30 2023
+5: not in cache
+5: Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from www.httpwatch.com
+5: Received HTTP/1.1 200 OK from www.httpwatch.com
+5: cached, expires at-1
+5: Responding HTTP/1.1 200 OK
+6: GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 107.15.129.222 @ Wed Mar 01 20:53:32 2023
+6: in cache, but expired at-1
+6: cached, expires at-1
+7: GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from 107.15.129.222 @ Wed Mar 01 20:53:37 2023
+7: not in cache
+7: Requesting GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from www.httpwatch.com
+7: Received HTTP/1.1 200 OK from www.httpwatch.com
+7: WARNING: when get req from real server request receive failed in www.httpwatch.com

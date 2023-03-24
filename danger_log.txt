@@ -1,0 +1,41 @@
+Danger log
+
+1. when deal with (dmx.districtm.io,443), it will produce 
+    no-id: ERROR cannot get address info for host
+
+2. POST: it really depends, Sometimes it works good, Sometimes the POST will wait a lot of time. We suggest you can open the post page before proxy run, and use post
+    We can guarantee that our post works, you can see it in our testcase.txt
+
+3. Chunk: we have realized chunked page get, but you may need to refresh the page to get the chunked information, 
+    this is because when we write the processGet function, we are not considering the chunk instead we accept only 
+    content_length based page, now it is not fixed, but you still can get chunked page once you request GET the second time.
+
+4. GET: in web browser like fire fox, it Sometimes went really slow when we want to use GET. But, if you use the following instruction in terminal,
+    you may find we actually get good page:
+    export http_proxy=http://localhost:12345
+    wget http://httpbin.org/forms/post
+    open other terminal, and you can find it works well;
+
+5. core dumped:
+    5.1 terminate called after throwing an instance of 'std::logic_error'
+        what():  basic_string::_M_construct null not valid
+        Aborted (core dumped)  
+        This error message is indicating that the program has encountered an unhandled exception of type std::logic_error, which was thrown 
+        due to an attempt to construct a std::basic_string object with a null pointer. The error message specifically points to the _M_construct 
+        function of the basic_string class, which is used to construct the string object. 
+        We don't know exact reason for this, but we guess it is foxfire broswer, it will often send unknown request, which will cause a initialize 
+        nullptr for std::sting
+
+    5.2 WARNING: when get req from real server request receive failed in httpbin.org
+
+6. Exception: 
+    our proxy is basic exception guarantee. 
+    Our proxy will create a client to connect the real server and server to connect to the browser. In the process of creating socket,
+    if there is any failure, it will throw a error message to the terminal and terminate the process.
+    If the proxy receives request more than POST, GET, CONNECT, it will return 400 error.
+    If the proxy receives wrong response, it will return 502 error.
+    Our Cache class has copy, assignment, destructor operation
+
+7. External failure:
+    When we refresh a web page frequently, it will fail to send response, so we suggest that use wget in different terminal to test;
+    

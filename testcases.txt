@@ -1,0 +1,75 @@
+========CONNECT========
+https://www.google.com/
+1: CONNECT www.google.com:443 HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:21:54 2023
+1: Responding "HTTP/1.1 200 OK"
+3: CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:21:54 2023
+3: Responding "HTTP/1.1 200 OK"
+5: CONNECT adservice.google.com:443 HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:21:55 2023
+5: Responding "HTTP/1.1 200 OK"
+6: CONNECT googleads.g.doubleclick.net:443 HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:21:55 2023
+6: Responding "HTTP/1.1 200 OK"
+2: WARNING: request receive failed from 10.197.193.234 @ Tue Feb 28 17:21:59 2023
+4: WARNING: request receive failed from 10.197.193.234 @ Tue Feb 28 17:22:00 2023
+7: CONNECT contile.services.mozilla.com:443 HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:22:51 2023
+7: Responding "HTTP/1.1 200 OK"
+8: POST http://r3.o.lencr.org/ HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:22:51 2023
+8: Received "HTTP/1.1 200 OK" from r3.o.lencr.org
+3: Tunnel closed
+6: Tunnel closed
+5: Tunnel closed
+
+========GET========
+http://httpbin.org/get
+1: GET http://httpbin.org/get HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:41:07 2023
+1: not in cache
+1: Requesting GET http://httpbin.org/get HTTP/1.1 from httpbin.org
+1: Received HTTP/1.1 200 OK from httpbin.org
+1: cached, but requires re-validation
+1: Responding HTTP/1.1 200 OK
+2: CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.193.234 @ Tue Feb 28 17:41:07 2023
+2: Responding "HTTP/1.1 200 OK"
+
+========POST========
+4: GET http://httpbin.org/forms/post HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 17:33:38 2023
+4: not in cache
+4: Requesting GET http://httpbin.org/forms/post HTTP/1.1 from httpbin.org
+4: Received HTTP/1.1 200 OK from httpbin.org
+4: cached, but requires re-validation
+4: Responding HTTP/1.1 200 OK
+5: CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 17:33:38 2023
+5: Responding "HTTP/1.1 200 OK"
+6: POST http://ocsp.digicert.com/ HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 17:33:38 2023
+6: Received "HTTP/1.1 200 OK" from ocsp.digicert.com
+7: POST http://httpbin.org/post HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 17:33:44 2023
+7: Received "HTTP/1.1 200 OK" from httpbin.org
+
+========CHUNK========
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+1: GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 16:34:51 2023
+1: not in cache
+1: Requesting GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from www.httpwatch.com
+1: Received HTTP/1.1 200 OK from www.httpwatch.com
+1: cached, expires at-1
+1: Responding HTTP/1.1 200 OK
+2: CONNECT incoming.telemetry.mozilla.org:443 HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 16:34:51 2023
+2: Responding "HTTP/1.1 200 OK"
+3: GET http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 16:35:37 2023
+3: in cache, but expired at-1
+3: cached, expires at-1
+4: GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from 10.197.193.234 @ Wed Mar 01 16:35:41 2023
+4: not in cache
+4: Requesting GET http://www.httpwatch.com/favicon.ico HTTP/1.1 from www.httpwatch.com
+4: Received HTTP/1.1 200 OK from www.httpwatch.com
+----------Action---------
+click on this picture first time, and if it is not showing up, refresh the page, and wait, it will show up
+
+=============In-cache valid============
+1: GET http://httpbin.org/forms/post HTTP/1.1 from 127.0.0.1 @ Wed Mar 01 20:42:56 2023
+1: not in cache
+1: Requesting GET http://httpbin.org/forms/post HTTP/1.1 from httpbin.org
+1: Received HTTP/1.1 200 OK from httpbin.org
+1: cached, but requires re-validation
+1: Responding HTTP/1.1 200 OK
+2: GET http://httpbin.org/forms/post HTTP/1.1 from 127.0.0.1 @ Wed Mar 01 20:42:59 2023
+2: in cache, valid
+
